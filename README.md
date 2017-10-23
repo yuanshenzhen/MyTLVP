@@ -8,5 +8,7 @@ allprojects {
         maven { url 'https://jitpack.io' }
     }
 }
+
 使用
+
 AddTab.addTab(mTabLayout,mViewPager,mFragment,mTitle,getSupportFragmentManager());
