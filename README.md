@@ -10,5 +10,9 @@ allprojects {
 }
 
 使用
-
-AddTab.addTab(mTabLayout,mViewPager,mFragment,mTitle,getSupportFragmentManager());
+  在布局文件中使用TabViewPager，宽高使用match_parent
+  属性       <attr name="tabTextColor" format="color" />
+            <attr name="tabSelectedTextColor" format="color" />
+            <attr name="tabBackgroundColor" format="color" />
+            <attr name="tabIndicatorColor" format="color" />
+            <attr name="vpBackgroundColor" format="color" />
