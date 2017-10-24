@@ -19,7 +19,7 @@ dependencies {
 ```
 
 ```xml
-<com.ysz.mytlvp.views.TabViewPager
+<com.ysz.tlvp.views.TabViewPager
         android:id="@+id/vp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
