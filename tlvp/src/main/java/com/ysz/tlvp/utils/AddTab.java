@@ -15,27 +15,31 @@ import java.util.List;
 public class AddTab {
     public static void addTab(TabLayout tabLayout, ViewPager viewPager, final List<Fragment> fragments,
                               final List<String> titles, FragmentManager fragmentManager) {
-        /**
-         * 预加载
-         */
-        viewPager.setOffscreenPageLimit(fragments.size());
-        viewPager.setAdapter(new FragmentPagerAdapter(fragmentManager) {
-            @Override
-            public Fragment getItem(int position) {
-                return fragments.get(position);
-            }
+        if (fragments.size() == titles.size()) {
+            /**
+             * 预加载
+             */
+            viewPager.setOffscreenPageLimit(fragments.size());
+            viewPager.setAdapter(new FragmentPagerAdapter(fragmentManager) {
+                @Override
+                public Fragment getItem(int position) {
+                    return fragments.get(position);
+                }
 
-            @Override
-            public int getCount() {
-                return fragments.size();
-            }
+                @Override
+                public int getCount() {
+                    return fragments.size();
+                }
 
-            @Override
-            public CharSequence getPageTitle(int position) {
-                return titles.get(position);
-            }
-        });
-        // TabLayout关联ViewPager
-        tabLayout.setupWithViewPager(viewPager);
+                @Override
+                public CharSequence getPageTitle(int position) {
+                    return titles.get(position);
+                }
+            });
+            // TabLayout关联ViewPager
+            tabLayout.setupWithViewPager(viewPager);
+        } else {
+            throw new IndexOutOfBoundsException("fragments size must equivalent to titles size");
+        }
     }
 }
