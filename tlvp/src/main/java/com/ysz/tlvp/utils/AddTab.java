@@ -18,6 +18,7 @@ public class AddTab {
         if (fragments.size() == titles.size()) {
             /**
              * 预加载
+             *
              */
             viewPager.setOffscreenPageLimit(fragments.size());
             viewPager.setAdapter(new FragmentPagerAdapter(fragmentManager) {
